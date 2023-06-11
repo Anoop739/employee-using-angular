@@ -1,0 +1,29 @@
+<div>
+    <table class="table table-striped caption-top pt-2 border-shadow">
+        <caption>list of employees</caption>
+        <thead>
+            <tr>
+                <th>name</th>
+                <th>department</th>
+                <th>email</th>
+                <th>phone</th>
+                <th>salary</th>
+                <th>Action</th>
+            </tr>
+            <tr *ngFor="let emp of employees">
+                <td>{{emp.name}}</td>
+                <td>{{emp.department}}</td>
+                <td>{{emp.email}}</td>
+                <td>{{emp.phone}}</td>
+                <td>{{emp.salary}}</td>
+                <td>
+                    <button (click)="redirectEmpDetail(emp.id)" class="btn btn-primary">view</button>
+                    <button style="margin-right: 16px;" class="btn btn-primary"[routerLink]="['/employeeedit',emp.id]">Edit</button>
+                    <button (click)="deleteEmployee(emp.id)" class="btn btn-secondary">Delete</button>
+                </td>
+            </tr>
+        </thead>
+    </table>
+    <!-- <pre>{{employees | json}}</pre> -->
+    
+</div>

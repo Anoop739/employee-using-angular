@@ -1,0 +1,27 @@
+<p>login works!</p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3"></div>
+        <div class="col-6">
+            <form action="" [formGroup]="loginform" (ngSubmit)="login()">
+                <h1>SignIn</h1>
+                <div class="mb-3">
+                    <input type="text" placeholder="enter the username" class="form-control" formControlName="username">
+                    <div class="form-text text-danger" *ngIf="username?.touched && username?.invalid">invalid username</div>
+                </div>
+                <div class="mb-3">
+                    <input type="password" placeholder="enter the password" class="form-control" formControlName="password">
+                    <div class="form-text text-danger" *ngIf="password?.touched && password?.invalid">invalid password</div>
+                </div>
+                <div class="mb-3">
+                    <input type="submit" [disabled]="loginform.invalid" class="btn btn-primary" value="login">
+                </div>
+                <div class="mb-3">
+                    don't have an account? <a href="" routerLink="register">Register Dude</a>
+                </div>
+            </form>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
